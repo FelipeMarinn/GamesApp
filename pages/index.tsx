@@ -2,8 +2,8 @@ import HeadBanner from '@components/HeadBanner/HeadBanner'
 import Layout from '@components/Layout/Layout'
 import ProductList from '@components/ProductList/ProductList'
 
-export const getServerSideProps = async () => {
-  const res = await fetch('http://localhost:3000/api/avo')
+export const getStaticProps = async () => {
+  const res = await fetch('https://games-app-eight.vercel.app/api/avo')
   const { data: productList }: APIResponse = await res.json()
 
   return { props: { productList } }
